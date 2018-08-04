@@ -1,3 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+
 text="$(decode_url "${REQUEST_PATH:1}")"
 content_type="audio/mpeg"
 
