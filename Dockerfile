@@ -6,5 +6,5 @@ RUN apk add --no-cache python && \
   pip install --upgrade pip setuptools && \
   pip install gTTS
 
-COPY bashttpd.conf /etc/bashttpd/
+COPY server.sh /etc/bashttpd/bashttpd.conf
 USER nobody
