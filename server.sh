@@ -10,11 +10,12 @@ saveIFS="$IFS"
 IFS='=&'
 query=($QUERY_STRING)
 IFS=$saveIFS
+echo "query: ${query[@]+"${query[@]}"}" >&2
 
 for ((i=0; i<${#query[@]}; i+=2)); do
   query_name="$(decode_url "${query[i]}")"
-  query_value="$(decode_url "${query[i+1]}")"
   if [ "${query_name}" = "lang" ]; then
+    query_value="$(decode_url "${query[i+1]}")"
     lang="${query_value}"
   fi
 done
