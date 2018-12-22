@@ -1,6 +1,4 @@
 import "querystring"
-import "static-binaries"
-static_binaries tree
 export PYTHONUSERBASE="$IMPORT_CACHE"
 
 build() {
@@ -8,7 +6,7 @@ build() {
   python3 get-pip.py --user
   pip install --user --upgrade pip setuptools
   pip install --user gTTS
-  #pip uninstall --user pip
+  pip uninstall --yes pip
 }
 
 handler() {
